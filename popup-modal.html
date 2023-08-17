@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<style>
+
+.popup .overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.7);
+    z-index: 1;
+    display: none;
+}
+.popup .content{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0);
+    background: #fff;
+    width: 450px;
+    height: 420px;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+.popup .close-btn{
+
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: #222;
+    color: #fff;
+    font-size: 25px;
+    font-weight: 600;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.popup.active  .overlay{
+    display: block;
+}
+.popup.active .content{
+    transition: all 300ms ease-in-out;
+    
+    transform: translate(-50%,-50%) scale(1);
+
+}
+
+</style>
+
+
+
+
+
+
+
+
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Features</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Pricing</a>
+              </li>
+              <li><a class="nav-link" onclick="togglePopup()">Login</a></li>
+             
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+
+
+<div class="popup" id="pop-1">
+    <div class="overlay"> </div>
+
+
+    <div class="content">
+        <div class="close-btn mb-4" onclick="togglePopup()">&times;</div>
+        <h1>Login</h1>
+<div class="card">
+    <form action="" class="form-control my-4">
+        <div class="form-control">
+            <label for="" >Name</label>
+        <input type="text" placeholder="Write your name">
+   
+        </div>
+        <div class="form-control my-4">
+            <label for="" >Name</label>
+        <input type="email" placeholder="Write your emai">
+   
+        </div>
+        <div class="form-control my-4">
+            <label for="" >Name</label>
+        <input type="password" placeholder="Write your password">
+
+        
+   
+        </div>
+        <div class="form-control d-grid">
+            <input class="btn btn-success d-grid"  type="submit" value="Submit">
+        </div>
+    </form>
+</div>
+       
+    </div>
+</div>
+
+
+
+<script>
+
+    function togglePopup(){
+        document.getElementById("pop-1").classList.toggle("active")
+    }
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    
+</body>
+</html>

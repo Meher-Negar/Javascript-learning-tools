@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation
+    </title>
+</head>
+<body>
+   <div style="text-align: center ;">
+    <form action="" method="post" name="myform"
+    onsubmit="formvalid(); return false;">
+    <h2 id="formdata"></h2>
+        <table>
+            <tr>
+                <td><label>Input Name</label></td>
+                <td><input type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td><label>Input Email</label></td>
+                <td><input type="text" name="email"></td>
+            </tr>
+            <tr>
+                <td><label>Password</label></td>
+               <td> <input type="password" name="password"></td>
+            </tr>
+            <td></td>
+            <td><input type="submit" name="submit" value="submit"></td>
+        </table>
+    </form>
+   </div> 
+
+
+
+<script>
+    function formvalid(){
+        var name = document.myform.name.value;
+        if(!name){
+            alert("Please input your name");
+            return false;
+        }
+        else{
+            var showName ="User name is: " +name;
+        }
+        var email = document.myform.email.value;
+        if(!email){
+            alert("Please input your email");
+            return false;
+        }
+        else{
+            var showEmail ="Email is: "+ email;
+        }
+        var password= document.myform.password.value;
+        if( password.length<=5){
+            alert("please input 6 digit password");
+            return false;
+        }
+        else{
+            alert("password protected");
+        }
+        document.getElementById('formdata').innerHTML= showName+"<br>"+showEmail;
+    }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+    <style>
+.container .over{
+position: fixed;
+height: 100%;
+width: 100%;
+background: rgba(0,0,0,0.7);
+display: none;
+z-index: 1;
+
+}
+
+.container .content{
+
+position: absolute;
+height: 240px;
+width: 450px;
+top: 50%;
+left: 50%;
+color: aliceblue;
+background: rebeccapurple;
+transform: translate(-50%,-50%) scale(0);
+display: block;
+overflow: hidden;
+justify-content: center;
+padding: 20px;
+z-index: 2;
+box-sizing: border-box;
+
+}
+
+.container .cls-btn{
+
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    height: 30px;
+    width: 30px;
+    font-size: 30px;
+    font-weight: 600;
+    color: black;
+    background: red;
+    border-radius: 50%;
+    justify-content: center;
+    text-align: center;
+}
+
+.container.active .content{
+
+    transform: translate(-50%,-50%) scale(1);
+
+}
+
+.container.active .over{
+    display: block;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container" id="pu">
+        <div class="over" ></div>
+        <div class="content">
+            <div class="cls-btn" onclick="popo()">
+                &times;
+            </div>
+           <div><p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates.</p></div> 
+        </div>
+    </div>
+
+
+    <button onclick="popo()">Show pop up</button>
+
+
+    <script>
+        function popo(){
+            document.getElementById('pu').classList.toggle('active');
+        }
+    </script>
+
+</body>
+</html>
